@@ -1,0 +1,20 @@
+{
+  "name": "extract-pdf-content",
+  "version": "1.0.0",
+  "description": "Extract pdf content using pdfjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "extract",
+    "pdf",
+    "pdfjs"
+  ],
+  "author": "Ammon Victor<ammon.victor@gmail.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "lodash": "^4.17.20",
+    "pdfjs-dist": "^2.6.347"
+  }
+}

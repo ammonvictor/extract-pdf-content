@@ -1,18 +1,25 @@
 # Extract PDF Content
 
-This is an demonstartion repository showing how to use [PDF.js](https://mozilla.github.io/pdf.js/) and [Lodash](https://lodash.com/) to ease data exploration and data entry.
+This repository contains example demonstrations on how to use [PDF.js](https://mozilla.github.io/pdf.js/) in conjunction with [Lodash](https://lodash.com/), to extract data from a pdf.
 
-## Installation
+There are two example applications, a web application to ease data exploration and a CLI application to ease data entry from a node.js application.
 
-Download this repository there are two flavors to choose from
-- cli implementation (requires [node.js](https://nodejs.org) installed)
+
+_NOTE: These are prototypes for further exploration and will need to be customised to a specific use case._
+
+
+## Usage
+
+Choose between: 
+
+- a CLI implementation ideally to be set up and used on a server (requires [node.js](https://nodejs.org) installed)
 
 ```bash
 cd server/
 npm install
-npm run index.js
+node index.js
 ```
-- web application (app folder, open in browser)
+- a web application implementation (open app folder, open index.htm in a web browser)
 
 
 ## License

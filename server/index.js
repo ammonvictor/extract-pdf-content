@@ -1,7 +1,7 @@
 const pdfjs = require('pdfjs-dist/es5/build/pdf')
 const _ = require("lodash")
 
-pdfjs.getDocument("../bank-statement.pdf").promise
+pdfjs.getDocument("./bank-statement.pdf").promise
     .then(async (doc) => {
         let page = await doc.getPage(1) // if doc has many pages use doc.numPages to iterate and pass index to doc.getPage
         let content = await page.getTextContent()
@@ -19,5 +19,6 @@ pdfjs.getDocument("../bank-statement.pdf").promise
                 return records
             }, [])
         // save json or save csv or write to db
+        console.log(records)
     })
     .catch(error => { console.log(error) }) // handle errors

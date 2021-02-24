@@ -9,11 +9,8 @@
         // probably check if we've got the right file
 
         reader.addEventListener('load', (event) => {
-            processFile(event.target.result)
-                .then(async (doc) => {
-                    let page = await doc.getPage(1) // if doc has many pages use doc.numPages to iterate and pass index to doc.getPage
-                    let content = await page.getTextContent()
-
+            getContent(event.target.result)
+                .then((content) => {
                     return content.items
                         .filter((item) => item.str.trim().length)
                         .map((item) => item.str)
@@ -35,8 +32,10 @@
         reader.readAsDataURL(file)
     })
 
-    function processFile(file) {
-        return pdfjs.getDocument(file).promise
+    async function getContent(file) {
+        const doc = await pdfjs.getDocument(file).promise
+        let page = await doc.getPage(1) // if doc has many pages use doc.numPages to iterate and pass index to doc.getPage
+        return await page.getTextContent()
     }
 
 })(pdfjsLib, _)
